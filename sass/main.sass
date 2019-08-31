@@ -1,0 +1,980 @@
+@import vars
+@import fonts
+@import libs
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: 'Roboto', sans-serif
+	overflow-x: hidden
+	color: $text
+
+// Mixin itself
+@mixin clearfix()
+  &::after
+    display: block
+    content: ""
+    clear: both
+
+.mt95
+	margin-top: 95px
+section
+	margin: 90px 0
+h1.title
+	text-align: center
+	font-size: 30px
+	font-family: "Raleway-Bold", sans-serif
+	color: $black
+	margin-bottom: 40px
+	span
+		color: $accent
+p.section_summery
+	color: #505050
+	font-family: "Raleway-Bold", sans-serif !important
+	font-size: 16px
+	text-align: center!important
+	span
+		color: $accent
+.active_nav
+		height: 100vh!important
+.divider
+	position: relative
+	width: 500px
+	margin: 95px auto
+	&:before
+		content: ""
+		width: 250px
+		height: 1px
+		background-color: $black
+		position: absolute
+		left: 0
+		top: 2.5px
+	&:after
+		content: ""
+		width: 250px
+		height: 1px
+		background-color: $black
+		position: absolute
+		right: 0
+		top: 2.5px
+.hexagon
+	  width: 15px
+	  height: 7px
+	  background: $black
+	  position: relative
+	  transform: rotate(90deg)
+	  margin: 0 auto
+	  &:before
+	    content: ""
+	    position: absolute
+	    top: -5px
+	    left: 0
+	    width: 0
+	    height: 0
+	    border-left: 7px solid transparent
+	    border-right: 8px solid transparent
+	    border-bottom: 5px solid $black
+	  &:after
+	    content: ""
+	    position: absolute
+	    bottom: -5px
+	    left: 0
+	    width: 0
+	    height: 0
+	    border-left: 7px solid transparent
+	    border-right: 8px solid transparent
+	    border-top: 5px solid $black
+
+// Custom Sass / Remove before use
+.navbar-light .navbar-toggler 
+	color: #fff
+	border-color: #fff
+header
+	display: flex
+	min-height: 100vh
+	background-image: url("../img/_src/header-bg.jpg")
+	background-repeat: no-repeat
+	background-size: cover
+	font-family: "Raleway-Regular", sans-serif
+	.top_line
+		min-height: 65px
+		background-color: rgba(0, 0, 0, .8)
+		position: fixed
+		width: 100%
+		z-index: 10
+		nav
+			padding: 0
+			background-color: transparent!important
+		.logo
+			position: absolute
+		ul.navbar-nav
+			list-style: none
+			margin: 0
+			padding: 0
+			text-align: right
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			justify-content: flex-end
+			width: 100%
+			li
+				display: inline-block
+				padding: 19px 0
+				text-transform: uppercase
+				margin-right: 20px
+				&:last-child
+					margin-right: 0
+				a
+					color: $silver!important
+					text-decoration: none
+					&:hover
+						color: #fff!important
+			li.active
+				border-top: 2px solid $accent
+				border-bottom: 2px solid $accent
+				a
+					color: #fff!important
+	.head_slide
+		text-align: center
+		margin-top: 30%
+		font-family: "Raleway-Regular", sans-serif
+		h2
+			font-family: "Raleway-Bold", sans-serif
+			color: #fff
+			font-size: 30px
+			margin-bottom: 38px
+			span
+				color: $accent
+		p
+			color: #fff
+			font-size: 16px
+		ul
+			list-style: none
+			margin-top: 50px
+			li
+				display: inline-block
+				a
+					font-family: "Raleway-Medium", sans-serif
+					font-size: 20px
+					text-transform: uppercase
+					text-decoration: none
+					color: #fff
+					padding: 13px 35px
+					background-color: $black
+					&:hover
+						background-color: $accent
+				&:first-child
+					a
+						margin-right: 30px
+						background-color: $accent
+
+section#about
+	p
+		color: #505050
+		font-family: "Raleway-Regular", sans-serif
+		text-align: justify
+	.first_item
+		margin-top: 40px
+	.about_item.active_item
+		height: auto
+		.about_item_title
+			color: $accent
+			.status
+				.circle
+					border: 1px solid $accent
+	.about_item
+		border: 1px solid #e7e7e7
+		overflow: hidden
+		transition: height .7s
+		height: 45px
+		margin-bottom: 10px
+		.about_item_title
+			color: $black
+			font-family: "Raleway-Medium", sans-serif
+			font-size: 20px
+			background-color: #f7f7f7
+			display: flex
+			cursor: pointer
+			.text
+				display: inline-block
+				min-height: 45px
+				line-height: 45px
+				padding-left: 30px
+			.status
+				border-right: 1px solid #e7e7e7
+				display: inline-block
+				min-height: 45px
+				line-height: 45px
+				padding: 0 20px
+				display: flex
+				align-items: center
+				.circle
+					width: 18px
+					height: 18px
+					line-height: 15px
+					border-radius: 50%
+					border: 1px solid $black
+					text-align: center
+					img
+						width: 10px
+		.about_item_body
+			padding: 15px
+			border-top: 1px solid #e7e7e7
+	.items_wrap
+		> div
+			text-align: center
+		p
+			text-align: center
+			font-size: 16px
+			color: #505050
+			font-family: "Raleway-Regular", sans-serif
+		.item_img
+			width: 88px
+			height: 77px
+			background-image: url("../img/_src/about_sprite.png")
+			margin: 0 auto
+			background-size: cover
+		.second
+			background-position: -109px 0
+		.third
+			background-position: -218px 0
+		.fourth
+			background-position: -327px 0
+	p.item_title
+		text-transform: uppercase
+		font-size: 20px
+		font-family: "Raleway-Medium", sans-serif
+		color: #262626
+		text-align: center
+		margin-top: 35px
+
+section#our_product
+	font-family: "Raleway-Medium", sans-serif
+	@include clearfix
+	ul
+		list-style: none
+		padding: 0
+		z-index: 1
+		margin-top: 135px
+		padding-right: 10px
+		li
+			display: block
+			margin-bottom: 25px
+			border: 1px solid #e6e6e6
+			text-align: right
+			text-transform: uppercase
+			font-size: 20px
+			padding: 8px 0
+			padding-right: 60px
+			position: relative
+			z-index: 1
+			.hexagon
+				width: 25px
+				height: 30px
+			&:hover
+				color: #fff
+				background-color: $accent
+				&:before,
+				&:after
+					background-image: url("../img/_src/active_hexagone_about.png")!important
+	ul.right_list
+		padding-left: 10px
+		padding-right: 0
+		li
+			text-align: left
+			padding-left: 60px
+			padding-right: 0
+			&:before
+				content: ""
+				width: 37px
+				height: 32px
+				position: absolute
+				background-image: url("../img/_src/hexagone_about.png")
+				left: 12px
+
+	ul.left_list
+		li
+			position: relative
+			&:after
+				content: ""
+				width: 37px
+				height: 32px
+				position: absolute
+				background-image: url("../img/_src/hexagone_about.png")
+				right: 12px
+
+
+	img.our_product
+		max-width: 475px
+		margin-left: -57px
+		z-index: -1
+	.free_psd_link
+		position: absolute
+		width: 100%
+		text-align: center
+		bottom: 77px
+		margin-left: -10px
+		a
+			padding: 13px 38px
+			text-transform: uppercase
+			color: #fff
+			text-decoration: none
+			background-color: #393939
+			font-size: 20px
+
+section#our_clints
+	@include clearfix;
+	background-image: url("../img/_src/our-clients.jpg")
+	background-size: cover
+	padding-top: 95px
+	padding-bottom: 90px
+	font-family: "Raleway-Regular", sans-serif
+	min-height: 700px
+	h1
+		color: #fff
+	p
+		color: #a4a4a4
+		font-size: 16px
+	p.section_summery
+		margin-bottom: 90px
+	p.slide_title
+		color: #fff
+		font-family: "Raleway-Medium", sans-serif
+		font-size: 20px
+		text-transform: uppercase
+		margin-bottom: 35px
+	p.user_name
+		color: $accent
+		font-family: "Raleway-Bold", sans-serif
+		text-transform: uppercase
+		margin-top: 16px
+	img.user_photo
+		margin-top: 15px
+	.slide
+		text-align: center
+	.item
+		width: 100%
+		height: 115px
+		box-shadow: inset 0 0 39px #747474
+		margin-bottom: 20px
+		background-color: #f2f2f2
+		font-family: "Raleway-Bold", sans-serif
+		font-size: 20px
+		text-transform: uppercase
+		line-height: 115px
+		padding-left: 35%
+		span
+			position: relative
+			display: block
+			&:before
+				content: ""
+				width: 40px
+				height: 40px
+				background-image: url("../img/_src/our-clints-sprite.png")
+				background-size: cover
+				position: absolute
+				left: -45px
+				top: 45px
+		span.photodune
+			&:before
+				background-position: 0 -113px
+		span.videohive
+			&:before
+				background-position: 0 -60px
+		span.codecanyon
+			&:before
+				background-position: 0 50px
+section#our_team
+	font-family: "Raleway-Regular", sans-serif
+	margin-bottom: 0
+	.team_item
+		text-align: center
+		border: 1px solid #e7e7e7
+		padding-bottom: 15px
+		&:hover
+			border: 1px solid #262626
+			.team_name
+				color: $accent
+			.soc_list
+				top: 0!important
+		.team_img_wrap
+			max-height: 233px
+			overflow: hidden
+			position: relative		
+			img
+				max-width: 100%
+			.soc_list
+				position: absolute
+				width: 100%
+				height: 100%
+				background-color: #262626
+				top: -100%
+				transition: top .5s
+				display: flex
+				align-items: center
+				justify-content: center
+		p.team_name
+			font-size: 20px
+			font-family: "Raleway-Medium", sans-serif
+			color: $black
+			margin-top: 25px
+			margin-bottom: 10px
+			text-transform: uppercase
+		p.team_proffesion
+			font-size: 16px
+		ul
+			list-style: none
+			padding: 0
+			li
+				display: inline-block
+				min-width: 45px
+				min-height: 42px
+				margin-right: 10px
+				&:last-child
+					margin-right: 0
+				a
+					background-image: url("../img/_src/white_hexagon.png")
+					background-repeat: no-repeat
+					display: block
+					width: 100%
+					height: 50px
+					img
+						margin-top: 11px
+	p.section_summery
+		margin-bottom: 95px
+
+section#skill
+	margin-top: 0
+	font-family: "Raleway-Regular", sans-serif
+	p.section_summery
+		margin-bottom: 85px
+	.skill_item
+		text-align: center
+		.skill_cirlce
+			width: 145px
+			height: 145px
+			line-height: 130px
+			border-radius: 50%
+			margin: 10px auto
+			font-size: 40px
+			font-weight: 100
+			position: relative
+			> span
+				position: absolute
+				top: 0
+				right: 0
+				left: 0
+				bottom: 0
+				color: $accent
+				span
+					color: $black
+		p
+			font-size: 16px
+		p.skill_name
+			text-transform: uppercase
+			font-size: 20px
+			font-family: "Raleway-Medium", sans-serif
+			color: $black
+section#our_services
+	padding-top: 95px
+	padding-bottom: 75px
+	font-family: "Raleway-Regular", sans-serif
+	background-color: #272727
+	.hexagon
+		background-color: #a4a4a4
+		width: 60px
+		height: 35px
+		&:before
+			top: -20px
+			border-bottom: 20px solid #a4a4a4
+			border-left: 30px solid transparent
+			border-right: 30px solid transparent
+		&:after
+			border-top: 20px solid #a4a4a4
+			bottom: -20px
+			border-left: 30px solid transparent
+			border-right: 30px solid transparent
+	h1
+		color: #fff
+	.services_name
+		text-transform: uppercase
+		font-family: "Raleway-Medium", sans-serif
+		font-size: 20px
+	p
+		font-size: 16px
+		text-align: justify
+		color: #a4a4a4
+		font-weight: 500
+	p.section_summery
+		margin-bottom: 85px
+	p.services_body
+		padding: 30px
+	.services_item
+		margin-bottom: 40px
+		&:hover
+			.services_name
+				color: #fff
+			.services_body
+				background-color: #3d2329
+				color: #fff
+
+section#plans_bestseller
+	font-family: "Raleway-Regular", sans-serif
+	font-weight: 600
+	p.section_summery
+		margin-bottom: 85px
+	.plans_item
+		text-align: center
+		width: 100%
+		border: 1px solid #e7e7e7
+		&:hover
+			ul
+				li
+					&:nth-child(2)
+						background-color: $accent
+						color: #fff
+					a
+						background-color: $accent
+						color: #fff
+		ul
+			padding: 0
+			list-style: none
+			margin: 0
+			li
+				border-bottom: 1px solid #e7e7e7
+				padding: 12px 0
+				font-size: 16px
+				color: #262626
+				&:first-child
+					background-color: #262626
+					color: #fff
+					text-transform: uppercase
+					border-bottom: none
+				&:last-child
+					border-bottom: none
+					padding: 20px 0
+				&:nth-child(2)
+					background-color: #f2f2f2
+					font-size: 50px
+					color: #262626
+					font-weight: bold
+					padding: 5px 0
+					transition: all .4s
+					border-top: none
+					span
+						font-size: 16px
+				a
+					padding: 8px 54px
+					color: #fff
+					background-color: #262626
+					text-decoration: none
+					text-transform: uppercase
+					font-size: 18px
+					transition: all .4s
+
+section#quote
+	padding-top: 95px
+	padding-bottom: 75px
+	font-family: "Raleway-Regular", sans-serif
+	background-color: #272727
+	text-align: center
+	background-image: url("../img/_src/quote_bg.jpg")
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: bottom
+	p
+		color: #fff
+		font-size: 16px
+		margin-top: 25px
+	img
+		display: block
+		margin: 0 auto
+
+section#our_blog
+	padding-bottom: 95px
+	p.section_summery
+		margin-bottom: 85px
+	.blog_item
+		margin-bottom: 50px
+		&:last-child
+			margin-bottom: 0
+	.post_name
+		font-family: "Raleway-Medium", sans-serif
+		font-weight: bold
+		font-size: 20px
+		color: #2e2e2e
+		line-height: 18px
+	img
+		width: 100%
+	ul
+		list-style: none
+		padding: 0
+		li
+			display: inline-block
+			margin: 0 10px
+			font-size: 12px
+			color: #a2a2a2
+			position: relative
+			&:before
+				content: ""
+				width: 15px
+				height: 16px
+				display: inline-block
+				background-image: url("../img/_src/media_sprite.png")
+				background-repeat: no-repeat
+				vertical-align: -3px
+				margin-right: 5px
+			a
+				font-size: 12px
+				color: #a2a2a2
+			&:first-child
+				margin-left: 0
+			&:nth-child(2)
+				&:before
+					background-position: -24px 0
+					vertical-align: -4px
+			&:last-child
+				&:before
+					background-position: -48px 0
+					width: 17px
+					height: 17px
+					vertical-align: -5px
+	p.post_desc
+		line-height: 24px
+	a.view_post
+		text-transform: uppercase
+		font-size: 16px
+		color: #fff
+		padding: 7px 30px
+		background-color: #262626
+		text-decoration: none
+		&:hover
+			background-color: $accent
+
+section#contacts
+	margin-bottom: 0
+	padding-bottom: 0
+	position: relative
+	p.section_summery
+		margin-bottom: 85px
+	#map
+		min-height: 578px
+		position: absolute
+		width: 100%
+		bottom: 0
+		iframe
+			position: absolute
+			width: 100%
+			height: 100%
+	form
+		display: block
+		padding: 50px 45px
+		box-shadow: 0 0 15px #e2e1e0
+		position: relative
+		z-index: 1
+		background-color: #fff
+		.title
+			text-transform: uppercase
+			font-size: 20px
+			color: #262626
+			font-family: "Raleway-Medium", sans-serif
+			margin-bottom: 45px
+		input,textarea
+			display: block
+			width: 100%
+			margin-bottom: 20px
+			border: 1px solid #e7e7e7
+			font-size: 16px
+			font-family: "Raleway-Regular", sans-serif
+			padding: 11px 15px
+		textarea
+			resize: none
+			min-height: 130px
+		button
+			text-transform: uppercase
+			color: #fff
+			background-color: #262626
+			font-size: 16px
+			font-family: "Raleway-Regular", sans-serif
+			padding: 7px 30px
+			border: none
+			&:hover
+				background-color: $accent
+		.btn_wrap
+			text-align: right
+
+
+footer
+	padding: 20px
+	background-color: #262626
+	color: #fff
+	font-family: "Raleway-Regular", sans-serif
+	font-size: 20px
+	margin-top: 20px
+					
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+	header .top_line .logo img
+		max-width: 85%
+	header .top_line ul.navbar-nav li
+		padding: 10px 0
+		margin-right: 11px
+	section#about
+		display: block
+		img[alt="about"]
+			max-width: 100%
+	section#our_clints .item
+		padding-left: 27%
+	
+	section#plans_bestseller .plans_item ul li a
+		padding: 8px 30px
+	section#our_product ul li
+		padding-top: 11px
+		padding-bottom: 11px
+		font-size: 16px
+	section#our_product img.our_product
+		max-width: 410px
+		margin-left: -55px
+		margin-top: 25px
+	section#our_product ul.right_list li:before,
+	section#our_product ul.left_list li:after
+		top: 9px
+
+// ≥992px
++media-breakpoint-down(md)
+	.mt95
+		margin-top: 30px
+	.navbar-collapse
+		background-color: black
+	header .top_line
+		background-color: #000
+	header .top_line nav
+		padding-top: 12px
+	header .top_line ul.navbar-nav
+		text-align: left
+		padding-top: 40px
+		padding-left: 15px
+	header .top_line ul.navbar-nav li
+		padding: 10px 0
+	header .top_line ul.navbar-nav li a
+		color: #fff!important
+	header .top_line .logo
+		display: none
+	section#about
+		display: block
+		img[alt="about"]
+			max-width: 100%
+			display: block
+			margin: 50px auto
+	section#about p.item_title
+		font-size: 18px
+	section#our_product ul.right_list
+		margin-top: 0
+		padding: 0
+	section#our_product ul
+		padding: 0
+		margin-top: 35px
+	section#our_product ul li
+		text-align: left
+		padding-left: 60px
+	section#our_product ul.left_list li:after
+		left: 12px
+	section#our_clints .item
+		padding-left: 0
+		text-align: center
+	section#our_clints .item span:before
+		display: none
+	section#our_team .team_item .team_img_wrap > img
+		width: 100%
+	section#our_team .team_item
+		margin-bottom: 20px
+	section#plans_bestseller .plans_item ul li a
+		padding: 8px
+	section#plans_bestseller .plans_item ul li:nth-child(2)
+		font-size: 41px
+
+// ≥768px
++media-breakpoint-down(sm)
+	.mt95
+		margin-top: 35px
+	section
+		margin: 30px 0
+	header
+		padding-bottom: 30px
+	header .top_line
+		background-color: black
+		// height: 100vh
+		overflow-y: auto
+
+	section#about
+		display: block
+		img[alt="about"]
+			max-width: 100%
+			margin-top: 30px
+
+	section#our_product .free_psd_link
+		bottom: 55px
+	section#our_product ul.left_list li:after,
+	section#our_product ul.right_list li:before
+		display: none
+	section#our_product ul li,
+	section#our_product ul.right_list li
+		padding-right: 20px
+		padding-left: 20px
+		text-align: left
+		font-size: 18px
+	section#our_product ul.right_list
+		margin-top: 60px
+		padding: 0
+	section#our_product ul
+		padding-right: 0
+		margin-top: 35px
+
+	section#our_team .team_item
+		margin-bottom: 40px
+		max-width: 300px
+		margin: 15px auto
+	section#our_team .team_item .team_img_wrap img
+		width: 100%
+	section#our_product img.our_product
+		max-width: 100%
+		width: 100%
+		margin: 0
+	section#our_product .free_psd_link
+		bottom: 55px
+
+// ≥576px
++media-breakpoint-down(xs)
+	
+	header .head_slide
+		margin-top: 37%
+	header .head_slide ul li
+		display: block
+	header .head_slide ul
+		padding: 0
+	header .head_slide ul li a
+		max-width: 190px
+		display: block
+		margin: auto
+	header .head_slide ul li:first-child
+		margin-bottom: 30px
+	header .head_slide ul li:first-child a
+		margin: auto
+	section
+		display: none
+	.divider
+		width: 100%
+		margin: 70px auto
+	section#about
+		display: block
+		img[alt="about"]
+			max-width: 100%
+			margin-top: 30px
+	section#about p.item_title
+		margin-top: 20px
+	section#about .items_wrap p.item_title
+		margin-bottom: 10px
+	section#about .items_wrap p
+		margin-bottom: 50px
+
+	section#our_product
+		display: block
+	section#our_product img.our_product
+		max-width: 100%
+		margin: 0
+	section#our_product .free_psd_link
+		bottom: 55px
+
+	section#our_clints
+		display: block
+		padding-top: 50px
+		padding-bottom: 50px
+	section#our_clints p.section_summery
+		margin-bottom: 50px
+	section#our_clints p.user_name
+		margin-bottom: 50px
+	
+	section#our_team
+		padding-top: 30px
+		display: block
+	section#our_team .team_item
+		margin-bottom: 30px
+	section#our_team p.section_summery
+		margin-bottom: 50px
+	section#our_team .team_item
+		max-width: 270px
+		margin: 15px auto
+
+	section#skill
+		display: block
+	section#skill p.section_summery
+		margin-bottom: 50px
+
+	section#our_services
+		padding-bottom: 20px
+		display: block
+		padding-top: 50px
+		margin-bottom: 0
+	section#our_services p.section_summery
+		margin-bottom: 40px
+	section#our_services p.services_body
+		padding: 0px
+	section#our_services .services_item:hover .services_body
+		background-color: transparent
+		color: #a4a4a4
+	section#our_services .services_item:hover .services_name
+		color: #a4a4a4
+
+	section#plans_bestseller
+		display: block
+		margin-top: 55px
+	section#plans_bestseller .plans_item
+		margin-bottom: 30px
+	section#plans_bestseller p.section_summery
+		margin-bottom: 50px
+
+	section#quote
+		display: block
+		padding-top: 60px
+		padding-bottom: 50px
+
+	section#our_blog
+		display: block
+		margin-top: 55px
+	section#our_blog .post_name
+		margin-top: 20px
+	section#our_blog .blog_item
+		margin-bottom: 65px
+
+	section#contacts
+		display: block
+		padding-bottom: 40px
+	section#contacts #map
+		display: none
+	section#contacts form
+		padding: 0
+		box-shadow: none
+	section#contacts p.section_summery
+		margin-bottom: 60px
+	section#contacts form .title
+		margin-bottom: 20px
